@@ -1,0 +1,11 @@
+1) Pointers
+2) Bitwise operater
+3) memory map
+4) Register details
+5) Hardware connection
+
+Mode register to toggle pins
+00 : Input (reset state) 
+01 : General purpose output mode
+10 : Alternative function mode
+11 : Analog mode
