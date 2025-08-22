@@ -1,0 +1,5 @@
+Steps to Blink:
+1) Identify the GPIO Prot (Portc) used to connenct the LED.
+2) Activate the GPIO Port used to connect the LED. (AHB1ENR)
+3) Configure the GPIO Pin mode as output. (MODER)
+4) Write to th GPIO PIN.  (ODR)
