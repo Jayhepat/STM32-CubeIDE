@@ -1,0 +1,5 @@
+TO DECODE 32-BIT PACKET INFORMATION AND PRINT THE VALUE.
+
+- Create a Structure and decleare Packat Data(crc, bat, payload,...)
+- to decode call the variable, Then shift to the 0th bit using shift operator and add mask value.
+- print the value for each variable according to its size.
