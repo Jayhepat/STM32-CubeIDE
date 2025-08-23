@@ -24,6 +24,6 @@ int main(void)
 {
     uint16_t Data = 0XBC10;
     uint8_t ExtractedBits;
-    ExtractedBits = ((Data >> 9) & 0X3F);
+    ExtractedBits = ((Data >> 9) & 0X3F); // Right shift to 9 bits and add to Mask value.
 	for(;;);
 }
