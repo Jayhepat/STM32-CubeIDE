@@ -1,0 +1,9 @@
+- To extract bits from 9 t0 14, [14:9] in give data and save it to another varibale.
+- Data = 0XBC10
+- Binary vale for it : 1011 1100 0001 0000
+- Data to extract : 011 110
+- Binary after shift : 0000 0000 0101 1110  & (AND operator) with mask value.
+- mask value : (0X 3F) - 0000 0000 0011 1111
+- Output Data: 01 1110
+
+ANSWER : 1E (Hexa)
