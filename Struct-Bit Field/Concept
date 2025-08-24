@@ -1,0 +1,10 @@
+STRUCT USING BIT FIELD 
+Take the values from the Datasheet.
+1) RCC AHB1 peripheral clock enable register(RCC-AHB1ENR)
+2) GPIO port Mode register (GPIOx_MODER)
+3) GPIO ODR register (GPIOx_ODR).
+
+- Declear the variables as members elements in header file MAIN.H file.
+- To store the values in mode registers.
+- To view that value on register using ODR.
+- And Blinking LEDs using Whule loop and adding delays to alter the LEDs.
