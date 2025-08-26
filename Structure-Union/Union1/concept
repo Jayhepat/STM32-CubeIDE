@@ -1,0 +1,5 @@
+Union:
+- Keyword: union
+- Size: Is equal to the size of largest member.
+- Memory allocated is shared by individual member of union.
+- Only the first member of a union can be initialized.
