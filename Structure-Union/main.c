@@ -4,6 +4,9 @@
  *  Created on: Aug 26, 2025
  *      Author: jayhe
  */
+
+// USING UNION KEYWORD INSTEAD OF STRUCT TO REDUCE SIZE //
+
 #include<stdio.h>
 #include<stdint.h>
 
@@ -26,3 +29,4 @@ int main(){
 	//fflush(stdout);
 	return 0;
 }
+
