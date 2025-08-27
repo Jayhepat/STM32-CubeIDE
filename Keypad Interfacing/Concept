@@ -1,0 +1,12 @@
+USING 4X4 KEYPAD WIITH STM32 :
+
+- ROW IN OUTPUT MODE  PC0-PC3
+- COLUMN GPIO IN INPUT MODE PC4-PC7
+
+- The pins in ROW (PC0 - PC3) should be connected with the PULL-UP register, to avoid the voltage fluctuation(0-5v).
+
+- Enable the CLK for AHB1ENR in RCC.
+- Configure the ports MODER, ODR, IDR, PUPDR
+- Enable the peripheral CLK for GPIOC on RCC
+- Configure GPIO PC0-PC3 and PC4 - PC7.
+
