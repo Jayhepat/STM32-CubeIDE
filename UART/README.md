@@ -29,3 +29,30 @@
 * Enable USART Module.
 * Enable Transmit CR1
 * Enable USART enable UE
+
+## Above Examples:
+### 1)
+### 2)
+### 3)
+### 4) Using the menber elements from the included header - UART program for Transmitter and receiver.
+* USART CR1 (CONTROL REGISTER) BITS
+~~~ 
+#define CR1_TE  (1U<<3)   // Transmitter enable
+#define CR1_UE  (1U<<13)  // USART enable
+#define CR1_RE  (1U<<2)   // Receiver enable
+~~~
+* USART SR (STATUS REGISTER) BITS
+ 1. Enable clock access to GPIOA
+ 2. Set PA2 mode to alternate function (TX)
+  ~~~
+    GPIOA->MODER &= ~(1U << 4);   // Clear bit 4
+    GPIOA->MODER |=  (1U << 5);   // Set bit 5 (AF mode)
+  ~~~
+ 3. Set PA3 mode to alternate function (RX)
+ 4. Configure PA2 alternate function (AF7 = USART2_TX)
+ 5. Configure PA3 alternate function (AF7 = USART2_RX)
+ 6. Enable clock access to USART2
+ 7. Configure baud rate
+ 8. Enable transmitter and receiver
+ 9. Enable USART2
+   
