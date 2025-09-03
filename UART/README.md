@@ -31,9 +31,22 @@
 * Enable USART enable UE
 
 ## Above Examples:
-### 1)
-### 2)
-### 3)
+### 1) UART Transmit
+* The program initializes GPIOA pin PA2 as the UART transmit (TX) pin and configures USART2 to run at 9600 baud. Once initialized, it repeatedly sends the character 'B' over the serial connection.
+* *main.c*→ Contains UART initialization and transmit loop.
+  *compute_uart_bd()* → Helper function to calculate baud rate divisor.
+  *uart2_tx_init()* → Configures GPIOA and USART2 for transmission.
+  *uart2_write()* → Sends one character over UART.
+* #### Working :
+  - Enable clock for GPIOA and USART2.
+  - Configure PA2 as alternate function (AF7 = USART2_TX).
+  - Set baud rate to 9600 bps.
+  - Enable transmitter and USART2 peripheral.
+  - Inside *main()*, repeatedly send the character 'B'.
+### 2) UART using drivers (uart.c and uart.h)
+* It implements a simple UART driver for STM32F4 where *uart.c* contains the initialization and transmit functions, *uart.h* holds macros and function declarations, and *main.c* demonstrates usage. The code configures **USART2 (PA2 as TX)**, sets the baud rate, and redirects *printf* to UART so that messages like **“Hello World”** are continuously printed over a serial terminal. In short, it’s a minimal example of building and using your own UART driver instead of directly writing everything inside *main.c*.
+### 3) UART Using Printf
+* It demonstrates how to configure **USART2 on STM32F4** to transmit data over UART while integrating *printf* support. Instead of sending characters manually with *uart2_write()*, the code overrides *_io_putchar()* so that *printf()* statements are redirected to UART. The program **initializes PA2 as TX**, sets baud rate to **9600 bps**, and continuously prints **“Hello World”** over the serial terminal. This makes UART debugging and logging easier by allowing the use of standard C library printing functions.
 ### 4) Using the menber elements from the included header - UART program for Transmitter and receiver.
 * USART CR1 (CONTROL REGISTER) BITS
 ~~~ 
