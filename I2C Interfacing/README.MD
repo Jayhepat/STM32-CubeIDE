@@ -1,7 +1,7 @@
 # STM32F4 I2C Communication with ADXL345 Accelerometer
 
 ## Overview
-This project demonstrates interfacing the **ADXL345 3-axis accelerometer** with an **STM32F4** microcontroller via the I2C protocol. It includes initialization, single-byte read/write, and burst read/write operations to communicate with the sensor.
+It demonstrates interfacing the **ADXL345 3-axis accelerometer** with an **STM32F411RE** microcontroller via the I2C protocol. It includes initialization, single-byte read/write, and burst read/write operations to communicate with the sensor.
 
 The program reads acceleration data in **X, Y, and Z axes**, converts raw data to gravitational units, and stores them in floating-point variables.
 
@@ -84,3 +84,12 @@ The program reads acceleration data in **X, Y, and Z axes**, converts raw data t
   Reads a single byte from a specified register.
 
 ---
+## Main Program Flow
+
+1. Initialize ADXL345 via `adxl_init()`.
+2. Continuously read acceleration data using `adxl_Read_Values(DATA_START_ADDR)`.
+3. Convert raw 16-bit data to signed integers:
+   ```c
+   x = ((data_rec[1] << 8) | data_rec[0]);
+   y = ((data_rec[3] << 8) | data_rec[2]);
+   z = ((data_rec[5] << 8) | data_rec[4]);
